@@ -30,7 +30,7 @@ function upperFirst(str) {
 
 export default function PageButtonsForms({user,page}) {
    
-  const pageSavedButtonsKeys = Object.keys(page.buttons);
+  const pageSavedButtonsKeys = Object.keys(page.buttons || {});
   const pageSavedButtonsInfo = pageSavedButtonsKeys
     .map(k => allButtons.find(b => b.key === k));
   const [activeButtons, setActiveButtons] = useState(pageSavedButtonsInfo);
@@ -64,7 +64,7 @@ export default function PageButtonsForms({user,page}) {
           list={activeButtons}
           setList={setActiveButtons}>
             {activeButtons.map(b => (
-              <div key={b.key} className="mb-4 flex items-center">
+              <div key={b.key} className="mb-4 md:flex items-center">
                 <div className="w-52 flex h-full text-gray-700 p-2 gap-2 items-center">
                   <FontAwesomeIcon 
                   icon={faGripLines}
