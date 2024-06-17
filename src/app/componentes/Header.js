@@ -16,12 +16,7 @@ export default async function Header(){
               <FontAwesomeIcon icon={faLink} className="text-green-800" />
               <span className="font-bold">GG Links</span>
               </Link>
-            <nav className="flex items-center gap-4 text-slate-500 
-            text-sm">
-              <Link href={'/sobre'}>Sobre</Link>
-              <Link href={'/preco'}>Preço</Link>
-              <Link href={'/contato'}>Contato</Link>
-             </nav>
+            
         </div> 
         <nav className="flex items-center gap-4 text-sm text-slate-500">
           {!!session && (

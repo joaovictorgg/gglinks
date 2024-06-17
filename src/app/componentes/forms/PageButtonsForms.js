@@ -64,7 +64,7 @@ export default function PageButtonsForms({user,page}) {
           list={activeButtons}
           setList={setActiveButtons}>
             {activeButtons.map(b => (
-              <div key={b.key} className="mb-4 flex items-center">
+              <div key={b.key} className="mb-4 md:flex items-center">
                 <div className="w-52 flex h-full text-gray-700 p-2 gap-2 items-center">
                   <FontAwesomeIcon 
                   icon={faGripLines}
@@ -75,7 +75,7 @@ export default function PageButtonsForms({user,page}) {
                 <input 
                 placeholder={b.placeholder}
                 name={b.key}
-                defaultValue={page.buttons[b.key]}
+                defaultValue={page?.buttons?.[b.key] ?? ''}
                 type="text" style={{marginBottom:'0'}} />
                 <button 
                 onClick={() => removeButton(b)}
